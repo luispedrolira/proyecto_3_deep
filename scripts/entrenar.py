@@ -14,6 +14,10 @@ import random
 import sys
 import time
 
+# Colab trae torchao 0.10 y peft 0.21 lanza ImportError si la versión es < 0.16.
+# No usamos torchao: lo ocultamos antes de importar peft.
+sys.modules.setdefault("torchao", None)
+
 import numpy as np
 import torch
 from peft import LoraConfig, get_peft_model
