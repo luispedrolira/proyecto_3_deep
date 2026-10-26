@@ -1,0 +1,18 @@
+{
+  "pares_spider": 8659,
+  "validos": 8432,
+  "descartados": 227,
+  "muestra_usada": 2300,
+  "validos_no_usados_por_muestreo": 6132,
+  "descartes_por_motivo": {
+    "only_full_group_by": 83,
+    "columna_inexistente": 70,
+    "duplicado": 25,
+    "error_3065": 22,
+    "subconsulta_sin_alias": 9,
+    "error_1140": 7,
+    "no_soportado": 6,
+    "error_1525": 4,
+    "tabla_inexistente": 1
+  }
+}

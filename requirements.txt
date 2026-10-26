@@ -1,0 +1,9 @@
+# torch viene preinstalado en Colab (GPU T4); no se fija para no romper CUDA
+transformers==5.16.1
+peft==0.21.2
+accelerate==1.14.0
+# Solo para nuestros scripts de datos/evaluación (solucion.py no los necesita)
+pymysql>=1.1
+sqlglot==30.24.0
+matplotlib
+pandas

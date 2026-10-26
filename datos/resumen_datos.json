@@ -1,0 +1,73 @@
+{
+  "entrenamiento": 2347,
+  "eval_loss": 94,
+  "por_fuente": {
+    "spider": 2167,
+    "propio": 180
+  },
+  "por_nivel": {
+    "media": 944,
+    "dificil": 812,
+    "facil": 591
+  },
+  "esquemas_entrenamiento": 147,
+  "esquemas_propios": [
+    "banco",
+    "biblioteca",
+    "flights",
+    "gimnasio",
+    "hosp",
+    "hr_corp",
+    "restaurante",
+    "streaming",
+    "taller",
+    "tienda_online",
+    "univ"
+  ],
+  "esquemas_eval_loss": [
+    "architecture",
+    "company_1",
+    "election_representative",
+    "music_2",
+    "protein_institute",
+    "soccer_2",
+    "wine_1"
+  ],
+  "pares_propios_escritos": 180,
+  "pares_propios_validos": 180,
+  "descartes_total": 266,
+  "descartes_por_motivo": {
+    "only_full_group_by": 90,
+    "columna_inexistente": 70,
+    "esquema_demasiado_largo": 39,
+    "duplicado": 25,
+    "order_by_fuera_de_distinct": 22,
+    "subconsulta_sin_alias": 9,
+    "no_soportado": 6,
+    "valor_fecha_invalido": 4,
+    "tabla_inexistente": 1
+  },
+  "descartes_por_fuente": {
+    "spider": 266
+  },
+  "spider": {
+    "pares_spider": 8659,
+    "validos": 8432,
+    "descartados": 227,
+    "muestra_usada": 2300,
+    "validos_no_usados_por_muestreo": 6132,
+    "descartes_por_motivo": {
+      "only_full_group_by": 83,
+      "columna_inexistente": 70,
+      "duplicado": 25,
+      "error_3065": 22,
+      "subconsulta_sin_alias": 9,
+      "error_1140": 7,
+      "no_soportado": 6,
+      "error_1525": 4,
+      "tabla_inexistente": 1
+    }
+  },
+  "fuga_esquemas_validacion": 0,
+  "ejemplos_con_tablas_homonimas_a_validacion": 0
+}
