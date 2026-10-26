@@ -8,7 +8,7 @@
 | Datos | Dataset final y verificación de fugas | Luis Pedro Lira | `scripts/construir_dataset.py`, `datos/resumen_datos.json` |
 | Entrenamiento | Script LoRA y configuraciones A/B | Luis Pedro Lira | `scripts/entrenar.py`, `notebooks/02_entrenamiento.ipynb` |
 | Entrenamiento | Corridas en Colab T4 | Luis Pedro Lira (A), Mario Rocha (B) | `resultados/entrenamiento_{A,B}.json`, `resultados/curvas_loss_*.png` |
-| Validación y errores | 2 esquemas y 40 preguntas de validación | _[compañero]_ | `datos/validacion/` |
+| Validación y errores | 2 esquemas y 40 preguntas de validación | Luis Pedro Lira (esquemas y SQL); Mario Rocha (redacción de 19 preguntas) | `datos/validacion/` |
 | Validación y errores | Evaluador por ejecución | Luis Pedro Lira | `scripts/evaluador.py` |
 | Validación y errores | `solucion.py` y autocorrección | Luis Pedro Lira; Mario Rocha (arreglo de compatibilidad con torchao en Colab) | `solucion.py`, `prompt.py` |
 | Validación y errores | Baseline, A/B, experimento de inferencia, análisis de errores | Mario Rocha | `notebooks/03_evaluacion.ipynb`, `resultados/` |

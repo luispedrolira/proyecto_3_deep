@@ -4,3 +4,10 @@ __pycache__/
 checkpoints_*/
 *.zip
 .env
+# Copias locales que no se entregan (el entregable es adapter/)
+adapter_A/
+adapter_B/
+proyecto_3_deep/
+.DS_Store
+pendientes.md
+preguntas_para_revisar.txt

@@ -91,18 +91,24 @@ que ni las bases ni los nombres de tabla de la validación aparezcan en el entre
 |---|---|---|
 | target_modules | q, k, v, o | q, k, v, o + gate, up, down |
 | r / alpha / dropout | 16 / 32 / 0.05 | 16 / 32 / 0.05 |
-| Parámetros entrenables | _ver resultados/entrenamiento_A.json_ | _ver resultados/entrenamiento_B.json_ |
-| Tiempo de entrenamiento (T4) | _pendiente_ | _pendiente_ |
-| Eval loss final | _pendiente_ | _pendiente_ |
+| Parámetros entrenables | 4,358,144 (0.28 %) | 18,464,768 (1.18 %) |
+| Batch por paso × acumulación (efectivo 16) | _confirmar con Luis_ | 2 × 8 (por memoria en T4) |
+| Tiempo de entrenamiento (T4, 1 época, 147 pasos) | 30.0 min | 32.2 min |
+| Eval loss final | 0.2065 | 0.2091 |
 
 Resultados en la validación propia (`resultados/resumen_experimentos.csv`):
 
-| Corrida | EX | Fácil | Media | Difícil |
-|---|---|---|---|---|
-| Baseline (sin adapter) | _pendiente_ | | | |
-| LoRA A | _pendiente_ | | | |
-| LoRA B | _pendiente_ | | | |
-| Mejor LoRA + autocorrección | _pendiente_ | | | |
+| Corrida | EX (ponderado) | Fácil | Media | Difícil | Ejecutan (de 40) | Tiempo medio / máx. (s) |
+|---|---|---|---|---|---|---|
+| Baseline (sin adapter) | 0.538 | 0.714 | 0.500 | 0.500 | 28 | 3.5 / 7.7 |
+| Baseline + autocorrección | 0.615 | 0.786 | 0.571 | 0.583 | 34 | 5.1 / 16.1 |
+| LoRA A | 0.692 | 1.000 | 0.786 | 0.500 | 34 | 2.0 / 6.0 |
+| LoRA B | 0.692 | 1.000 | 0.786 | 0.500 | 34 | 2.1 / 4.4 |
+| **LoRA B + autocorrección (entregado)** | **0.718** | 1.000 | 0.857 | 0.500 | 36 | 2.8 / 10.9 |
+
+A y B empatan en EX (fallan en preguntas distintas: A acierta v18 y w18, B acierta w16 y w20). El notebook desempata a
+favor de B, que es el adapter que quedó en `adapter/`. La autocorrección le suma 1 pregunta a B (w12) y 3 en neto al baseline;
+el adapter mejora sobre todo las preguntas fáciles y medias, mientras que las difíciles siguen en 0.5.
 
 ## Licencias
 
@@ -117,7 +123,9 @@ Resultados en la validación propia (`resultados/resumen_experimentos.csv`):
 - **Claude Code (Anthropic)** se usó como asistente de programación para escribir los scripts, `solucion.py`, los
   notebooks y esta documentación. También redactó los esquemas propios y los pares pregunta–SQL de entrenamiento:
   el enunciado permite "pares generados con un LLM". Todos los pares se validaron ejecutándolos en MySQL 8.4.10.
-- El set de validación lo redactó el asistente y el equipo lo revisó y ajustó. **(Equipo: revisen y reescriban las preguntas
-  que consideren, porque el enunciado pide preguntas escritas por ustedes. Luego actualicen esta línea.)**
+- El set de validación (2 esquemas, 40 SQL y un primer borrador de las preguntas) lo redactó el asistente. Mario Rocha
+  revisó y reescribió la redacción de 19 preguntas de `clinica_vet` (v01–v20 salvo v05), apoyándose en un asistente de IA
+  para la redacción; las de `inv_mgmt` quedaron como en el borrador. Se verificó que cada pregunta reescrita pidiera lo
+  mismo que su SQL.
 - Las preguntas de Spider se tradujeron con un modelo local de traducción automática (MarianMT), sin APIs externas.
 - En la inferencia **no** se usa ninguna API externa: solo el modelo base más el adapter LoRA.

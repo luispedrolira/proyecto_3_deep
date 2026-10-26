@@ -1,0 +1,6 @@
+config,columna_tabla_inexistente,filtro,join,sintaxis
+baseline,10,0,5,2
+baseline_autocorr,4,0,8,2
+lora_A,5,0,3,1
+lora_B,3,1,2,3
+lora_B_autocorr,2,1,3,2

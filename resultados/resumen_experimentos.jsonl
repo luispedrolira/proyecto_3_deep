@@ -1,0 +1,5 @@
+{"config": "baseline", "EX": 0.5385, "por_nivel": {"facil": 0.714, "media": 0.5, "dificil": 0.5}, "ejecutan": 28, "n": 40, "tiempo_medio_s": 3.46, "tiempo_max_s": 7.66}
+{"config": "lora_A", "EX": 0.6923, "por_nivel": {"facil": 1.0, "media": 0.786, "dificil": 0.5}, "ejecutan": 34, "n": 40, "tiempo_medio_s": 2.03, "tiempo_max_s": 5.99}
+{"config": "lora_B", "EX": 0.6923, "por_nivel": {"facil": 1.0, "media": 0.786, "dificil": 0.5}, "ejecutan": 34, "n": 40, "tiempo_medio_s": 2.06, "tiempo_max_s": 4.41}
+{"config": "lora_B_autocorr", "EX": 0.7179, "por_nivel": {"facil": 1.0, "media": 0.857, "dificil": 0.5}, "ejecutan": 36, "n": 40, "tiempo_medio_s": 2.78, "tiempo_max_s": 10.86}
+{"config": "baseline_autocorr", "EX": 0.6154, "por_nivel": {"facil": 0.786, "media": 0.571, "dificil": 0.583}, "ejecutan": 34, "n": 40, "tiempo_medio_s": 5.07, "tiempo_max_s": 16.1}
